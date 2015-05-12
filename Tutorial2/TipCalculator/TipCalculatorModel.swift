@@ -22,7 +22,7 @@ class TipCalculatorModel {
         self.taxPct = taxPct
     }
     
-    func calcTipPct(tipPct: Double) -> Double {
+    func calcTipWithTipPct(tipPct: Double) -> Double {
         return subtotal * tipPct
     }
     
@@ -34,7 +34,7 @@ class TipCalculatorModel {
         
         for possibleTip in possibleTipsInferred {
             let intPct = Int(possibleTip*100)
-            retval[intPct] = calcTipPct(possibleTip)
+            retval[intPct] = calcTipWithTipPct(possibleTip)
         }
         
         return retval
