@@ -5,8 +5,8 @@ import Foundation
     optional func TellJoke()
 }
 
-class Vicki: Speaker {
-    @objc func Speak() {
+@objc class Vicki: Speaker {
+    func Speak() {
         println("Hello, I am Vicki!")
     }
     func TellJoke() {
@@ -14,8 +14,8 @@ class Vicki: Speaker {
     }
 }
 
-class Ray: Speaker {
-    @objc func Speak() {
+@objc class Ray: Speaker {
+    func Speak() {
         println("Yo, I am Ray!")
     }
     
@@ -46,3 +46,42 @@ speaker.TellJoke?()
 speaker = Dog()
 speaker.TellJoke?()
 
+class DateSimulator {
+    let a:Speaker
+    let b:Speaker
+    var delegate:DateSimulatorDelegate?
+    
+    init(a:Speaker, b:Speaker) {
+        self.a = a
+        self.b = b
+    }
+    
+    func simulate() {
+        delegate?.dateSimulatorDidStart(self, a: a, b: b)
+        println("Off to dinner ...")
+        a.Speak()
+        b.Speak()
+        println("Walking back home ...")
+        a.TellJoke?()
+        b.TellJoke?()
+        delegate?.dateSimulatorDidEnd(self, a: a, b: b)
+    }
+}
+    
+protocol DateSimulatorDelegate {
+    func dateSimulatorDidStart(sim:DateSimulator, a:Speaker, b:Speaker)
+    func dateSimulatorDidEnd(sim:DateSimulator, a:Speaker, b:Speaker)
+}
+
+class LoggingDateSimulator:DateSimulatorDelegate {
+    func dateSimulatorDidStart(sim:DateSimulator, a:Speaker, b:Speaker) {
+        println("Date started!")
+    }
+    func dateSimulatorDidEnd(sim:DateSimulator, a:Speaker, b:Speaker) {
+        println("Date ended!")
+    }
+}
+
+let sim = DateSimulator(a: Vicki(), b: Ray())
+sim.delegate = LoggingDateSimulator()
+sim.simulate()
