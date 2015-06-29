@@ -13,17 +13,20 @@ import AVOSCloud
 class ViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet var scrollView: UIScrollView!
-
-    @IBOutlet weak var officeImageView: UIImageView!
     
-    @IBOutlet weak var qingYangPalaceButton: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var qingYangGong: UIButton!
+    
+    @IBAction
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var testObject:AVObject = AVObject(className: "TestObject")
-        testObject["foo"] = "bar"
-        testObject.save()
+        scrollView.contentSize = imageView.bounds.size
+        scrollView.delegate = self
+        
+        qingYangGong.addTarget(self, action: Selector("navigateToBookView:"), forControlEvents: UIControlEvents.TouchUpInside)
         
     }
 
@@ -32,6 +35,14 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         // Dispose of any resources that can be recreated.
     }
 
+    func navigateToBookView(button:UIButton) {
+        var meetingRoom = MeetingRoom(roomName: button.titleLabel!.text!)
+        println(button.titleLabel!.text!)
+        
+        var bookMeetingViewController = BookMeetingViewController()
+        bookMeetingViewController.meetingRoom = meetingRoom
+        self.navigationController?.pushViewController(bookMeetingViewController, animated: true)
+    }
 
 }
 
