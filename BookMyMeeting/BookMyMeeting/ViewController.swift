@@ -37,7 +37,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
     func navigateToBookView(button:UIButton) {
         var meetingRoom = MeetingRoom(roomName: button.titleLabel!.text!)
-        println(button.titleLabel!.text!)
         
         var bookMeetingViewController = BookMeetingViewController()
         bookMeetingViewController.meetingRoom = meetingRoom

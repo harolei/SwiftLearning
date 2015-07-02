@@ -18,6 +18,7 @@
 		495AFA4D1B393EB500373129 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 495AFA4C1B393EB500373129 /* Pods.framework */; };
 		4967788A1B4128BD00996B78 /* BookMeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496778891B4128BD00996B78 /* BookMeetingViewController.swift */; };
 		4967788C1B412ACB00996B78 /* MeetingRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4967788B1B412ACB00996B78 /* MeetingRoom.swift */; };
+		4967788E1B45103A00996B78 /* Meeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4967788D1B45103A00996B78 /* Meeting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		495AFA4C1B393EB500373129 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		496778891B4128BD00996B78 /* BookMeetingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookMeetingViewController.swift; sourceTree = "<group>"; };
 		4967788B1B412ACB00996B78 /* MeetingRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingRoom.swift; sourceTree = "<group>"; };
+		4967788D1B45103A00996B78 /* Meeting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meeting.swift; sourceTree = "<group>"; };
 		5BA18ECB5884553070CA5BFD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B32F7347C37163DF3B32F3C1 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1953DA6A5ACDF8ADD9B1B3B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				493430961B28779D0053FF3A /* Supporting Files */,
 				496778891B4128BD00996B78 /* BookMeetingViewController.swift */,
 				4967788B1B412ACB00996B78 /* MeetingRoom.swift */,
+				4967788D1B45103A00996B78 /* Meeting.swift */,
 			);
 			path = BookMyMeeting;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4967788E1B45103A00996B78 /* Meeting.swift in Sources */,
 				4967788A1B4128BD00996B78 /* BookMeetingViewController.swift in Sources */,
 				4934309B1B28779D0053FF3A /* ViewController.swift in Sources */,
 				4967788C1B412ACB00996B78 /* MeetingRoom.swift in Sources */,
