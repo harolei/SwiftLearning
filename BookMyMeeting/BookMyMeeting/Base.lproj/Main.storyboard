@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--新办公区-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="BookMyMeeting" customModuleProvider="target" sceneMemberID="viewController">
@@ -35,7 +35,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="SkD-fs-f0X"/>
+                    <navigationItem key="navigationItem" title="新办公区" id="SkD-fs-f0X"/>
                     <connections>
                         <outlet property="imageView" destination="NSv-el-kwa" id="a9e-5i-YjP"/>
                         <outlet property="qingYangGong" destination="Gza-dy-XPt" id="TBy-EO-XoH"/>
@@ -44,7 +44,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="704" y="332"/>
+            <point key="canvasLocation" x="623" y="332"/>
+        </scene>
+        <!--Book Meeting View Controller-->
+        <scene sceneID="uSI-UR-7UL">
+            <objects>
+                <viewController storyboardIdentifier="BookMeeting" id="0NZ-5O-GM1" customClass="BookMeetingViewController" customModule="BookMyMeeting" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GWR-Bp-TMA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="BKE-nT-a9f">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="0NZ-5O-GM1" id="BR9-WK-0Qi"/>
+                                    <outlet property="delegate" destination="0NZ-5O-GM1" id="X7m-oq-j4t"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="xrN-w3-VaR">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ojs-9b-RWB" userLabel="Add Meeting"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="roomTableView" destination="BKE-nT-a9f" id="bvc-O6-Pmg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Le3-tW-fQd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1081" y="332"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0dT-9C-gTh">

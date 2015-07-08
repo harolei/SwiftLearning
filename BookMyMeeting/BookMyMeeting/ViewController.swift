@@ -18,7 +18,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var qingYangGong: UIButton!
     
-    @IBAction
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +37,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     func navigateToBookView(button:UIButton) {
         var meetingRoom = MeetingRoom(roomName: button.titleLabel!.text!)
         
-        var bookMeetingViewController = BookMeetingViewController()
+        var bookMeetingViewController = storyboard?.instantiateViewControllerWithIdentifier("BookMeeting") as! BookMeetingViewController
         bookMeetingViewController.meetingRoom = meetingRoom
         self.navigationController?.pushViewController(bookMeetingViewController, animated: true)
     }

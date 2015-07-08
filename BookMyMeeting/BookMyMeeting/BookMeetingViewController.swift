@@ -12,20 +12,16 @@ import AVOSCloud
 
 class BookMeetingViewController:UIViewController, UITableViewDataSource {
 
+    @IBOutlet weak var roomTableView: UITableView!
+    
     var list: [Meeting] = []
     var meetingRoom: MeetingRoom!
-    var meetingTable = UITableView(frame: CGRectMake(0, 0, 320, 568))
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
     }
-    
-    override func loadView() {
-        meetingTable.dataSource = self
-        self.view = meetingTable
-    }
-    
+        
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
     }
@@ -41,6 +37,7 @@ class BookMeetingViewController:UIViewController, UITableViewDataSource {
     }
     
     private func loadData() {
+        
         AVQuery(className: "Meeting").findObjectsInBackgroundWithBlock { (success: [AnyObject]!, error: NSError!) -> Void in
             if error != nil {
                 return
@@ -49,7 +46,7 @@ class BookMeetingViewController:UIViewController, UITableViewDataSource {
                 return Meeting(object: object as! AVObject)
             }).filter({$0.meetingRoom == self.meetingRoom.roomName as String})
         
-            self.meetingTable.reloadData()
+            self.roomTableView.reloadData()
         }
     }
 }
